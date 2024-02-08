@@ -39,9 +39,13 @@ def submit_form():
 
     try:
         # Find form elements (replace 'your_description_id' and 'your_location_id')
-        description = driver.find_element(By.XPATH, '/html/body/div/section/div/div/div[2]/div/div/section[2]/div/div[2]/div/div[2]/div/div[1]/div/input')
-        location = driver.find_element(By.XPATH, '/html/body/div[1]/section/div/div/div[2]/div/div/section[2]/div/div[2]/div/div[2]/div/div[2]/div/input')
-        submit = driver.find_element(By.XPATH, '/html/body/div[1]/section/div/div/div[2]/div/div/section[2]/div/div[2]/div/div[2]/div/div[3]/div/button')
+        # description = driver.find_element(By.XPATH, '/html/body/div/section/div/div/div[2]/div/div/section[2]/div/div[2]/div/div[2]/div/div[1]/div/input')
+        description = driver.find_element(By.XPATH, '(//input)[1]')
+        # location = driver.find_element(By.XPATH, '/html/body/div/section/div/div/div[2]/div/div/section[2]/div/div[2]/div/div[2]/div/div[2]/div/input')
+        location = driver.find_element(By.XPATH, '(//input)[2]')
+
+        submit = driver.find_element('//button[text()="Sign Up"]')
+        
 
         # Fill in form elements (replace 'your_description_text' and 'your_location_text')
         description.send_keys('your_description_text')
